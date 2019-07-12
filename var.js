@@ -1,3 +1,5 @@
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures
+
 // node作用域  子函数作用域->父函数作用域->父函数的父的作用域->...->模块内的global作用域->内置全局作用域
 // window作用域  子函数作用域->父函数作用域->父函数的父的作用域->...->window
 
@@ -42,3 +44,28 @@ function a(){
 }
 let dc = a()
 console.log(dc(),dc(),dc())
+
+
+
+// 一个闭包陷阱
+function showHelp(help) {
+  document.getElementById('help').innerHTML = help;
+}
+
+function setupHelp() {
+  var helpText = [
+      {'id': 'email', 'help': 'Your e-mail address'},
+      {'id': 'name', 'help': 'Your full name'},
+      {'id': 'age', 'help': 'Your age (you must be over 16)'}
+    ];
+
+  for (var i = 0; i < helpText.length; i++) {
+    var item = helpText[i];
+    document.getElementById(item.id).onfocus = function() {
+      showHelp(item.help);
+    }
+  }
+}
+
+setupHelp();
+
