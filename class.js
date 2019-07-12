@@ -1,4 +1,5 @@
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 // 一个最基本得类
 class MyO {
     constructor(){
